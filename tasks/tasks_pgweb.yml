@@ -23,12 +23,13 @@
 
   - name: PGWEB | Download distribution
     get_url: url="https://github.com/sosedoff/pgweb/releases/download/v{{pgweb_version|default('0.9.5')}}/pgweb_linux_amd64.zip" dest="/tmp/pgweb_linux_amd64.zip"
+    become: yes
     when: pgweb_present | failed
     tags:
       - pgweb
 
   - name: PGWEB | Unpack distribution
-    unarchive: src=/tmp/pgweb_linux_amd64.zip dest=/opt/pgweb remote_src=yes
+    shell: unzip /tmp/pgweb_linux_amd64.zip -d /opt/pgweb
     when: pgweb_present | failed
     become: yes
     tags:
