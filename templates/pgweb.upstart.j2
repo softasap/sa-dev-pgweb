@@ -8,4 +8,4 @@ respawn
 setuid {{ pgweb_user }}
 #setgid www-data
 
-exec {{ pgweb_install_dir }}/pgweb --bind={{ pgweb_bind_address }} --listen={{ pgweb_bind_port }}
+exec {{ pgweb_install_dir }}/pgweb --sessions --bind={{ pgweb_bind_address }} --listen={{ pgweb_bind_port }}
