@@ -1,9 +1,10 @@
 ---
 # defaults file for sa-dev-pgweb
 
-pgweb_version: "0.11.3"
+pgweb_version: "0.11.4"
 pgweb_user: pgweb
 pgweb_group: pgweb
+pgweb_extra_params: " --sessions "
 
 pgweb_install_dir: /opt/pgweb
 

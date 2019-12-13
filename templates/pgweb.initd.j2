@@ -47,7 +47,7 @@ case "$1" in
     done
 
     # Ready to start pgweb
-    PID=`$SU -c '{{ pgweb_install_dir }}/pgweb --sessions --bind={{ pgweb_bind_address }} --listen={{ pgweb_bind_port }} >/dev/null & echo $!'`  # Note! Logs are lost.
+    PID=`$SU -c '{{ pgweb_install_dir }}/pgweb --bind={{ pgweb_bind_address }} --listen={{ pgweb_bind_port }} {{ pgweb_extra_params }}>/dev/null & echo $!'`  # Note! Logs are lost.
     if [ -z $PID ]; then
         exit 1
     else
