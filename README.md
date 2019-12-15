@@ -18,7 +18,8 @@ Simple
 ```YAML
 
      - {
-         role: "sa-dev-pgweb"
+         role: "sa-dev-pgweb",
+         pgweb_extra_params: " --sessions "
        }
 
 
